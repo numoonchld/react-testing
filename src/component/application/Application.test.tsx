@@ -3,21 +3,37 @@ import Application from "./Application"
 
 describe('Application Form', () => {
 
-
-    beforeEach(() => {})
-
-    test('renders name text box', () => {
+    beforeEach(() => {
         render(<Application />)
+    })
 
+    test('renders headings for the job application', () => {
+        const pageHeading = screen.getByRole("heading", {
+            level: 1 // associated text content for disambiguation when multiple headings roles are present
+        })
+        expect(pageHeading).toBeInTheDocument()
 
-        const nameTextBox = screen.getByRole('textbox')
+        const sectionHeading = screen.getByRole("heading", {
+            level: 2
+        })
+    })
+
+    test('renders name text input and bio text box', () => {
+
+        const nameTextBox = screen.getByRole('textbox', {
+            name: 'Name' // associated label for disambiguation when multiple text box roles are present
+        })
         expect(nameTextBox).toBeInTheDocument()
+
+        const bioTextArea = screen.getByRole('textbox', {
+            name: 'Bio' // associated label for this text box role
+        })
+        expect(bioTextArea).toBeInTheDocument()
     })
 
 
-    test('renders select combo box', () => {
-        render(<Application />)
 
+    test('renders select combo box', () => {
 
         const selectComboBox = screen.getByRole('combobox')
         expect(selectComboBox).toBeInTheDocument()
@@ -25,8 +41,6 @@ describe('Application Form', () => {
 
 
     test('renders terms checkbox', () => {
-        render(<Application />)
-
 
         const termsCheckBox = screen.getByRole('checkbox')
         expect(termsCheckBox).toBeInTheDocument()
@@ -34,14 +48,12 @@ describe('Application Form', () => {
 
 
     test('renders submit button', () => {
-        render(<Application />)
-
 
         const submitButton = screen.getByRole('button')
         expect(submitButton).toBeInTheDocument()
     })
 
-    
+
 
 
 })
