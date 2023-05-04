@@ -7,7 +7,7 @@ describe('Application Form', () => {
         render(<Application />)
     })
 
-    test('renders headings for the job application', () => {
+    test('renders headings for the job application - by role', () => {
         const pageHeading = screen.getByRole("heading", {
             level: 1 // associated text content for disambiguation when multiple headings roles are present
         })
@@ -23,12 +23,22 @@ describe('Application Form', () => {
         expect(paraTextElement).toBeInTheDocument()
     })
 
-    test('renders image element', () => {
+    test('renders image element - by alt text', () => {
         const imageElement = screen.getByAltText('a person with a laptop')
         expect(imageElement).toBeInTheDocument()
     })
 
-    test('renders name text input and bio text box', () => {
+    test('renders span - by title', () => {
+        const spanElement = screen.getByTitle('close')
+        expect(spanElement).toBeInTheDocument()
+    })
+
+    test('renders div - by data-testid', () => {
+        const divElement = screen.getByTestId('custom-element')
+        expect(divElement).toBeInTheDocument()
+    })
+
+    test('renders name text input and bio text box - by role', () => {
 
         const nameTextBox = screen.getByRole('textbox', {
             name: 'Name' // associated label for disambiguation when multiple text box roles are present
@@ -41,7 +51,7 @@ describe('Application Form', () => {
         expect(bioTextArea).toBeInTheDocument()
     })
 
-    test('renders Name text field - by label', () => {
+    test('renders Name text field - by label text', () => {
 
         const nameFieldByLabel = screen.getByLabelText('Name', {
             selector: 'input' // useful optional option for disambiguation when multiple of the same labels exist
@@ -49,21 +59,19 @@ describe('Application Form', () => {
         expect(nameFieldByLabel).toBeInTheDocument()
     })
 
-    test('renders Name text field - by placeholder', () => {
+    test('renders Name text field - by placeholder text', () => {
 
         const nameFieldByPlaceholder = screen.getByPlaceholderText('full name')
         expect(nameFieldByPlaceholder).toBeInTheDocument()
     })
 
-
-    test('renders select combo box', () => {
+    test('renders select combo box - by role', () => {
 
         const selectComboBox = screen.getByRole('combobox')
         expect(selectComboBox).toBeInTheDocument()
     })
 
-
-    test('renders terms checkbox', () => {
+    test('renders terms checkbox - by role', () => {
 
         const termsCheckBox = screen.getByRole('checkbox')
         expect(termsCheckBox).toBeInTheDocument()
@@ -75,14 +83,11 @@ describe('Application Form', () => {
         expect(termsCheckBoxByLabel).toBeInTheDocument()
     })
 
-
-    test('renders submit button', () => {
+    test('renders submit button - by role', () => {
 
         const submitButton = screen.getByRole('button')
         expect(submitButton).toBeInTheDocument()
     })
-
-
 
 
 })
