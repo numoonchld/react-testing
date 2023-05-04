@@ -23,6 +23,11 @@ describe('Application Form', () => {
         expect(paraTextElement).toBeInTheDocument()
     })
 
+    test('renders image element', () => {
+        const imageElement = screen.getByAltText('a person with a laptop')
+        expect(imageElement).toBeInTheDocument()
+    })
+
     test('renders name text input and bio text box', () => {
 
         const nameTextBox = screen.getByRole('textbox', {
