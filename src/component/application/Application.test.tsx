@@ -31,6 +31,13 @@ describe('Application Form', () => {
         expect(bioTextArea).toBeInTheDocument()
     })
 
+    test('renders Name text field - by label', () => {
+
+        const nameFieldByLabel = screen.getByLabelText('Name', {
+            selector: 'input' // useful optional option for disambiguation when multiple of the same labels exist
+        })
+        expect(nameFieldByLabel).toBeInTheDocument()
+    })
 
 
     test('renders select combo box', () => {
@@ -44,6 +51,12 @@ describe('Application Form', () => {
 
         const termsCheckBox = screen.getByRole('checkbox')
         expect(termsCheckBox).toBeInTheDocument()
+    })
+
+    test('renders terms checkbox - by wrapper label text', () => {
+
+        const termsCheckBoxByLabel = screen.getByLabelText('I agree to the terms and conditions')
+        expect(termsCheckBoxByLabel).toBeInTheDocument()
     })
 
 

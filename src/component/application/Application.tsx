@@ -27,7 +27,7 @@ const Application = () => {
         </select>
       </div>
       <div>
-        <label> <input type="checkbox" id="terms"/> I agree to the terms and conditions</label> 
+        <label> <input type="checkbox" id="terms"/>I agree to the terms and conditions</label> 
       </div>
       <button type='submit'>Submit</button>
     </form>
