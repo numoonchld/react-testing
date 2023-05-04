@@ -18,6 +18,11 @@ describe('Application Form', () => {
         })
     })
 
+    test('renders paragraph element - by text', () => {
+        const paraTextElement = screen.getByText('All fields are mandatory')
+        expect(paraTextElement).toBeInTheDocument()
+    })
+
     test('renders name text input and bio text box', () => {
 
         const nameTextBox = screen.getByRole('textbox', {
@@ -37,6 +42,12 @@ describe('Application Form', () => {
             selector: 'input' // useful optional option for disambiguation when multiple of the same labels exist
         })
         expect(nameFieldByLabel).toBeInTheDocument()
+    })
+
+    test('renders Name text field - by placeholder', () => {
+
+        const nameFieldByPlaceholder = screen.getByPlaceholderText('full name')
+        expect(nameFieldByPlaceholder).toBeInTheDocument()
     })
 
 
