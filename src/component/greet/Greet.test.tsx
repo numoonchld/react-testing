@@ -3,7 +3,7 @@ import Greet from "./Greet"
 
 describe("Greet", () => {
 
-    test('Greet renders correctly', () => {
+    it('Greet renders correctly', () => {
         render(<Greet />)
     
         const text = screen.getByText("Hello")
