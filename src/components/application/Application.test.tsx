@@ -16,6 +16,7 @@ describe('Application Form', () => {
         const sectionHeading = screen.getByRole("heading", {
             level: 2
         })
+        expect(sectionHeading).toBeInTheDocument()
     })
 
     test('renders paragraph element - by text', () => {

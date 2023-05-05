@@ -1,6 +1,5 @@
 import { render, screen } from '../../utils/test-utills'
 import { MuiMode } from './MuiMode'
-import { AppProviders } from '../../providers/AppProviders'
 
 
 describe('MuiMode', () => {
