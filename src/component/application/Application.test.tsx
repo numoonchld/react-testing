@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { logRoles, render, screen } from "@testing-library/react"
 import Application from "./Application"
 
 describe('Application Form', () => {
@@ -90,4 +90,12 @@ describe('Application Form', () => {
     })
 
 
+})
+
+describe('roles debug', () => {
+
+    test('shows roles for the dom tree', () => {
+        const { container } = render(<Application />)
+        logRoles(container)
+    })
 })
