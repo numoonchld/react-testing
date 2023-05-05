@@ -10,9 +10,9 @@ function App() {
   return (
     <AppProviders>
       <div className="App">
-        {/* <Application />
+        <Application />
         <Skills skills={['HTML', 'CSS', 'JS']} />
-        <Counter /> */}
+        <Counter />
         <MuiMode />
       </div>
     </AppProviders>
